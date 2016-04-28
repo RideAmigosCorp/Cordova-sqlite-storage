@@ -42,7 +42,10 @@
         NSLog(@"Detected Library path: %@", libs);
         [appDBPaths setObject: libs forKey:@"libs"];
 
-        NSString *nosync = [libs stringByAppendingPathComponent:@"LocalDatabase"];
+        //NSString *nosync = [libs stringByAppendingPathComponent:@"LocalDatabase"];
+        NSString *nosync = [libs stringByAppendingPathComponent:@"Caches"];
+        NSLog(@"!! Default ios Database Location is 'Caches' (NOT FOR RELEASE!) !!: %@", nosync);
+
         NSError *err;
         if ([[NSFileManager defaultManager] fileExistsAtPath: nosync])
         {
